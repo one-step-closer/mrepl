@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{0EAC80DE-68D3-4AC6-8BC7-95DBE2AAB0DE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>mrepl</RootNamespace>
+    <AssemblyName>mrepl</AssemblyName>
+    <OptionStrict>On</OptionStrict>
+    <UseMSBuildEngine>False</UseMSBuildEngine>
+    <ReleaseVersion>1.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineTrace>false</DefineTrace>
+    <DefineDebug>false</DefineDebug>
+    <AdditionalParameters>
+    </AdditionalParameters>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\</OutputPath>
+    <Externalconsole>true</Externalconsole>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>false</DefineTrace>
+    <AdditionalParameters>
+    </AdditionalParameters>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MyType>Console</MyType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Sub Main</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="MimeKit">
+      <HintPath>packages\MimeKit.1.4.2\lib\net40\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="MailKit">
+      <HintPath>packages\MailKit.1.4.2.1\lib\net40\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application.vb" />
+    <Compile Include="AssemblyInfo.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mrepl.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lists\sample.lst">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Deployment.LinuxDeployData generateScript="False" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>
